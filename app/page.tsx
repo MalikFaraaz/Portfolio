@@ -4,6 +4,8 @@ import { parseInlineBold } from "@/lib/markdown-lite";
 import { PortfolioClient } from "@/components/public/PortfolioClient";
 import { ContactForm } from "@/components/public/ContactForm";
 
+import { Navbar } from "@/components/public/Navbar";
+
 export const revalidate = 3600; // on-demand revalidation is primary via revalidatePath
 
 export default async function HomePage() {
@@ -64,23 +66,8 @@ export default async function HomePage() {
     <>
       <PortfolioClient roles={roles} heroCodeSnippet={heroHighlightedCode} />
 
-      {/* Nav */}
-      <nav>
-        <div className="w">
-          <a className="logo" href="#top">
-            Faraz<i>.</i>
-          </a>
-          <div className="menu">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <a className="btn p" href="#contact">
-            Hire me
-          </a>
-        </div>
-      </nav>
+      {/* Responsive Nav */}
+      <Navbar />
 
       {/* Hero */}
       {hero && (
