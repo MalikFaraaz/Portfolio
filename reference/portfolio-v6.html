@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content=width=device-width, initial-scale=1, viewport-fit=cover>
+<title>Faraz Hassan | Full Stack Developer</title>
+<link rel=stylesheet href=https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap>
+<style>
+:root{--bg:#F4F6FB;--panel:#FFFFFF;--ink:#0A1020;--mute:#5B6680;--line:#DCE1EE;--a:#2457F5;--a2:#1A3FB8;--code:#0A1020;--codeink:#DCE6FF;
+--f:'Sora',system-ui,-apple-system,'Segoe UI',sans-serif;--m:ui-monospace,SFMono-Regular,Menlo,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#06080F;--panel:#0D1220;--ink:#F2F5FF;--mute:#8D98B5;--line:#1A2338;--a:#4B7BFF;--a2:#9DB8FF;--code:#090E1A}}
+:root[data-theme=dark]{--bg:#06080F;--panel:#0D1220;--ink:#F2F5FF;--mute:#8D98B5;--line:#1A2338;--a:#4B7BFF;--a2:#9DB8FF;--code:#090E1A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 var(--f);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:6px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.05;font-weight:700}
+.w{max-width:1180px;margin:0 auto;padding:0 28px}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:100%;background:var(--a);transform:scaleX(0);transform-origin:left;z-index:20}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .w{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.03em}
+.logo i{color:var(--a);font-style:normal}
+.menu{display:flex;gap:32px;font-size:14.5px;font-weight:500;color:var(--mute)}
+.menu a:hover{color:var(--ink)}
+.btn{display:inline-flex;gap:10px;align-items:center;padding:14px 26px;border-radius:12px;font-weight:600;font-size:15px;border:1.5px solid var(--line);background:var(--panel);transition:transform .2s,border-color .2s,background .2s}
+.btn.p{background:var(--a);border-color:var(--a);color:#fff}
+.btn:hover{transform:translateY(-3px);border-color:var(--a)}
+.btn .ar{transition:transform .2s}.btn:hover .ar{transform:translateX(4px)}
+.hero{padding:96px 0 72px;min-height:calc(100vh - 68px);display:flex;align-items:center}
+.hero .w{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;width:100%}
+.hi{display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);background:var(--panel);padding:8px 16px;border-radius:99px;font-size:14px;font-weight:500;margin-bottom:28px}
+.hi i{width:8px;height:8px;border-radius:50%;background:#22B573;animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,181,115,.6)}100%{box-shadow:0 0 0 10px rgba(34,181,115,0)}}
+h1{font-size:clamp(44px,6.6vw,88px);font-weight:800}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}
+.ln span{display:block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+.ln:nth-child(2) span{animation-delay:.12s}.ln:nth-child(3) span{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.role{font-size:clamp(20px,2.4vw,28px);font-weight:600;margin-top:26px;color:var(--a);min-height:1.4em}
+.role::after{content:'';display:inline-block;width:3px;height:1em;background:var(--a);margin-left:4px;vertical-align:-.12em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.lead{color:var(--mute);font-size:18px;max-width:52ch;margin:22px 0 34px}
+.fade{opacity:0;animation:fd .8s .55s forwards}
+.fade.d2{animation-delay:.75s}
+@keyframes fd{to{opacity:1}}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.term{background:var(--code);color:var(--codeink);border-radius:18px;border:1px solid var(--line);overflow:hidden;font:13.5px/1.75 var(--m)}
+.term .tb{display:flex;gap:7px;align-items:center;padding:13px 18px;border-bottom:1px solid #1E2A47;background:#0F1730;color:#8D98B5;font-size:12.5px}
+.term .tb i{width:10px;height:10px;border-radius:50%;background:#2B3A63}
+.term .tb span{margin-left:10px}
+.term pre{margin:0;padding:22px;overflow-x:auto;min-height:290px;white-space:pre}
+.k{color:#7FA1FF}.s{color:#F3B65B}.c{color:#6376A0}.t{color:#6FE0B0}
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:20px 0;background:var(--panel)}
+.mt{display:flex;gap:56px;width:max-content;animation:mq 28s linear infinite;font-weight:700;font-size:22px;letter-spacing:-.02em;color:var(--mute)}
+.mt span::after{content:'/';margin-left:56px;color:var(--a)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.s{padding:112px 0}
+.tag{font-size:14px;font-weight:600;color:var(--a);margin-bottom:14px}
+h2{font-size:clamp(34px,4.6vw,58px)}
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.about p{color:var(--mute);font-size:18px;margin-top:20px}
+.about p b{color:var(--ink);font-weight:600}
+.facts{display:grid;gap:14px}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 24px;display:flex;justify-content:space-between;gap:20px;transition:border-color .2s,transform .2s}
+.fact:hover{border-color:var(--a);transform:translateX(6px)}
+.fact span{color:var(--mute)}.fact b{text-align:right}
+.ph{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:56px;flex-wrap:wrap}
+.ph p{color:var(--mute);max-width:44ch}
+.stk{position:relative}
+.pj{position:sticky;top:calc(88px + var(--i)*18px);background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:40px;margin-bottom:36px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;transition:border-color .25s}
+.pj:hover{border-color:var(--a)}
+.pj h3{font-size:clamp(36px,4.4vw,56px)}
+.pj .ds{color:var(--mute);margin:16px 0 22px;max-width:46ch}
+.pj ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px}
+.pj li{padding-left:28px;position:relative;font-weight:500;font-size:15.5px}
+.pj li::before{content:'';position:absolute;left:0;top:.5em;width:14px;height:8px;border-left:2.5px solid var(--a);border-bottom:2.5px solid var(--a);transform:rotate(-45deg) scale(.8)}
+.tgs{display:flex;flex-wrap:wrap;gap:8px}
+.tgs span{font-size:13px;font-weight:600;padding:5px 13px;border-radius:99px;background:var(--bg);border:1px solid var(--line)}
+.pj .term pre{min-height:0;font-size:13px}
+.proc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.st{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px;transition:transform .25s,border-color .25s}
+.st:hover{transform:translateY(-6px);border-color:var(--a)}
+.st em{font:800 15px var(--f);font-style:normal;color:#fff;background:var(--a);width:38px;height:38px;border-radius:11px;display:grid;place-items:center;margin-bottom:22px}
+.st h3{font-size:24px;margin-bottom:10px}
+.st p{color:var(--mute);font-size:15.5px}
+.nums{background:var(--a);color:#fff;padding:88px 0}
+.ng{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.ng b{display:block;font-size:clamp(48px,6vw,84px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.ng span{opacity:.85;font-weight:500}
+.end{padding:120px 0 56px}
+.end h2{font-size:clamp(44px,8vw,116px);font-weight:800;max-width:12ch}
+.mail{display:inline-block;margin-top:44px;font-size:clamp(22px,3.2vw,42px);font-weight:600;letter-spacing:-.03em;border-bottom:3px solid var(--a);padding-bottom:4px;transition:color .2s}
+.mail:hover{color:var(--a)}
+.lk{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
+.ft{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:88px;padding-top:24px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+@media(max-width:900px){.menu{display:none}.hero .w,.about,.pj{grid-template-columns:1fr}.hero{padding:56px 0}.s{padding:72px 0}.pj{position:static;padding:26px}.proc{grid-template-columns:1fr}.ng{grid-template-columns:1fr 1fr}.end{padding:80px 0 40px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ln span{animation:none;transform:none}.fade{animation:none;opacity:1}.rv{opacity:1;transform:none;transition:none}.mt{animation:none}.hi i{animation:none}.role::after{animation:none}.btn,.fact,.st{transition:none}}
+</style>
+</head>
+<body>
+<div id=bar></div>
+<nav><div class=w><a class=logo href=#top>Faraz<i>.</i></a>
+<div class=menu><a href=#about>About</a><a href=#work>Work</a><a href=#process>Process</a><a href=#contact>Contact</a></div>
+<a class=btn p href=#contact>Hire me</a></div></nav>
+
+<header class=hero id=top><div class=w>
+<div>
+<div class=hi fade><i></i>Available for new projects</div>
+<h1><span class=ln><span>Hi, I'm Faraz.</span></span><span class=ln><span>I build apps</span></span><span class=ln><span>people love.</span></span></h1>
+<div class=role fade id=role aria-live=off></div>
+<p class=lead fade d2>Full stack developer from Sialkot, Pakistan. I turn ideas into fast, polished mobile and web products, from the first screen to the live release.</p>
+<div class=row fade d2><a class=btn p href=#work>See my work <span class=ar>→</span></a><a class=btn href=#contact>Get in touch</a></div>
+</div>
+<div class=term fade d2 aria-hidden=true>
+<div class=tb><i></i><i></i><i></i><span>ride_provider.dart</span></div>
+<pre id=code></pre>
+</div>
+</div></header>
+
+<div class=mq aria-hidden=true><div class=mt id=mt></div></div>
+
+<section class=s id=about><div class=w about>
+<div class=rv><div class=tag>About me</div><h2>I care about how it works and how it feels.</h2>
+<p>I'm a <b>Flutter developer</b> who builds complete products: the app, the backend connection and the real-time parts in between. I work with Flutter, Next.js, WordPress and native Android.</p>
+<p>I currently work as a Flutter developer at <b>Technosofts</b>, and I build <b>EasyGo</b>, a ride-hailing and carpooling app with driver and rider sides, on my own.</p></div>
+<div class=facts rv>
+<div class=fact><span>Role</span><b>Full Stack Developer</b></div>
+<div class=fact><span>Mobile</span><b>Flutter, Android</b></div>
+<div class=fact><span>Web</span><b>Next.js, WordPress</b></div>
+<div class=fact><span>Real-time</span><b>Laravel, Pusher, WebSocket</b></div>
+<div class=fact><span>Based in</span><b>Sialkot, Pakistan</b></div>
+</div>
+</div></section>
+
+<section class=s id=work style=padding-top:40px><div class=w>
+<div class=ph rv><div><div class=tag>Selected work</div><h2>Products people use every day.</h2></div><p>Real apps with real users. Scroll to see each one.</p></div>
+<div class=stk>
+<article class=pj style=--i:0><div><h3>EasyGo</h3><p class=ds>A ride-hailing and carpooling app with separate driver and rider sides. Drivers publish trips, riders book seats and follow the ride live.</p><ul><li>Live map and trip tracking</li><li>Driver and rider apps</li><li>KYC verification</li><li>Real-time notifications</li></ul><div class=tgs><span>Flutter</span><span>Riverpod</span><span>GoRouter</span><span>Laravel</span><span>Pusher</span></div></div>
+<div class=term aria-hidden=true><div class=tb><i></i><i></i><i></i><span>trip_socket.dart</span></div><pre><span class=c>// driver location, live</span>
+channel.bind('driver.moved', (e) {
+  ref.read(tripProvider.notifier)
+     .updateDriver(e.lat, e.lng);
+});
+
+<span class=c>// trip status changes</span>
+channel.bind('trip.status', (e) {
+  router.go('/trip/' + e.id);
+});</pre></div></article>
+
+<article class=pj style=--i:1><div><h3>Washhouse</h3><p class=ds>An on-demand laundry and logistics ecosystem. Customer and rider apps stay in sync through live tracking, chat and payments.</p><ul><li>Customer and rider apps</li><li>Live order tracking</li><li>In-app chat</li><li>Secure payments</li></ul><div class=tgs><span>Flutter</span><span>GetX</span><span>Firebase</span><span>Maps</span></div></div>
+<div class=term aria-hidden=true><div class=tb><i></i><i></i><i></i><span>order_controller.dart</span></div><pre><span class=k>class</span> OrderController <span class=k>extends</span> GetxController {
+  <span class=k>final</span> status = 'placed'.obs;
+
+  <span class=k>void</span> listen(String id) {
+    db.doc('orders/' + id).snapshots()
+      .listen((d) =&gt; status(d['status']));
+  }
+}</pre></div></article>
+
+<article class=pj style=--i:2><div><h3>ZenVPN</h3><p class=ds>A secure and fast VPN app with ad integrations and a modern interface that connects in one tap.</p><ul><li>One-tap connection</li><li>Yandex Ads and AdMob</li><li>Clean, modern interface</li></ul><div class=tgs><span>Flutter</span><span>Yandex Ads</span><span>AdMob</span></div></div>
+<div class=term aria-hidden=true><div class=tb><i></i><i></i><i></i><span>vpn_service.dart</span></div><pre><span class=k>Future</span>&lt;<span class=k>void</span>&gt; connect(Server s) <span class=k>async</span> {
+  state = VpnState.connecting;
+  <span class=k>await</span> engine.start(s.config);
+  state = VpnState.connected;
+  <span class=k>await</span> ads.showInterstitial();
+}</pre></div></article>
+
+<article class=pj style=--i:3><div><h3>Hex Headwear</h3><p class=ds>A custom caps and apparel website with global shipping and low minimum order quantities for small brands.</p><ul><li>Online store with WooCommerce</li><li>Global shipping</li><li>Low minimum order quantity</li></ul><div class=tgs><span>WordPress</span><span>WooCommerce</span></div></div>
+<div class=term aria-hidden=true><div class=tb><i></i><i></i><i></i><span>functions.php</span></div><pre><span class=c>// low MOQ for custom orders</span>
+add_filter('woocommerce_quantity_input_args',
+  <span class=k>function</span>() {
+    ['min_value'] = <span class=t>12</span>;
+    <span class=k>return</span> ;
+  });</pre></div></article>
+</div>
+</div></section>
+
+<section class=s id=process style=padding-top:40px><div class=w>
+<div class=ph rv><div><div class=tag>How I work</div><h2>From idea to live release.</h2></div><p>A simple process that keeps projects clear and on time.</p></div>
+<div class=proc>
+<div class=st rv><em>1</em><h3>Understand</h3><p>I learn what the product must do and who will use it, before writing any code.</p></div>
+<div class=st rv><em>2</em><h3>Build</h3><p>Clean, well-structured code with real-time features and smooth screens.</p></div>
+<div class=st rv><em>3</em><h3>Ship and support</h3><p>I release, test with real users and keep improving after launch.</p></div>
+</div>
+</div></section>
+
+<section class=nums><div class=w ng>
+<div><b data-n=4 data-s=+>0</b><span>Major projects</span></div>
+<div><b data-n=2 data-s=+>0</b><span>Years of experience</span></div>
+<div><b data-n=3 data-s=">0</b><span>Stacks: mobile, web, CMS</span></div>
+<div><b data-n=6 data-s=>0</b><span>Core technologies</span></div>
+</div></section>
+
+<section class=end id=contact><div class=w>
+<h2 class=rv>Let's build something great.</h2>
+<a class=mail href=mailto:faraz.hassan@example.com>faraz.hassan@example.com</a>
+<div class=lk><a class=btn href=#contact>GitHub</a><a class=btn href=#contact>LinkedIn</a><a class=btn p href=mailto:faraz.hassan@example.com>Send message <span class=ar>→</span></a></div>
+<div class=ft><span>Faraz Hassan · Full Stack Developer · Sialkot, Pakistan</span><span>© 2026 All rights reserved.</span></div>
+</div></section>
+
+<script>
+(function(){
+var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var techs=['Flutter','Next.js','WordPress','Android','Riverpod','Laravel','Firebase','GetX','WooCommerce','Pusher'];
+var mt=document.getElementById('mt');
+mt.innerHTML=techs.concat(techs).map(function(t){return '<span>'+t+'</span>'}).join('');
+var roles=['Flutter developer','Full stack developer','Mobile app builder','Problem solver'],el=document.getElementById('role');
+if(RM){el.textContent=roles[0]}else{var ri=0,ci=0,del=false;(function tick(){var r=roles[ri];ci+=del?-1:1;el.textContent=r.slice(0,ci);var d=del?35:75;if(!del&&ci===r.length){del=true;d=1400}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=350}setTimeout(tick,d)})()}
+var code='<span class=c>// real-time ride state</span>\n<span class=k>final</span> rideProvider =\n StateNotifierProvider&lt;RideNotifier, Ride&gt;(\n (ref) =&gt; RideNotifier(\n socket: ref.read(pusherProvider),\n ),\n );\n\n<span class=c>// driver moves, map updates</span>\nsocket.on(\'driver.moved\', (e) {\n state = state.copyWith(driver: e.position);\n});';
+var pre=document.getElementById('code');
+if(RM){pre.innerHTML=code}else{var i=0,out='';(function type(){if(i>=code.length)return;if(code[i]==='<'){var j=code.indexOf('>',i);out+=code.slice(i,j+1);i=j+1;}else if(code[i]==='&'){var k=code.indexOf(';',i);out+=code.slice(i,k+1);i=k+1;}else{out+=code[i++];}pre.innerHTML=out;setTimeout(type,18)})()}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(n,i){n.style.transitionDelay=(i%3)*90+'ms';io.observe(n)});
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cio.unobserve(e.target);var n=+e.target.dataset.n,s=e.target.dataset.s;if(RM){e.target.textContent=n+s;return}var st=performance.now();(function f(t){var p=Math.min((t-st)/1400,1);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p<1?'':s);if(p<1)requestAnimationFrame(f)})(st)})},{threshold:.5});
+document.querySelectorAll('[data-n]').forEach(function(n){cio.observe(n)});
+var bar=document.getElementById('bar');
+addEventListener('scroll',function(){var h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')'},{passive:true});
+})();
+</script>
+</body>
+</html>

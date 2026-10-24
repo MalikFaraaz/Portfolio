@@ -1,0 +1,124 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model SiteSettings {
+  id              Int      @id @default(1)
+  siteTitle       String
+  metaDescription String
+  ogImageUrl      String?
+  accentLight     String   @default("#2457F5")
+  accentDark      String   @default("#4B7BFF")
+  availableBadge  String   @default("Available for new projects")
+  showBadge       Boolean  @default(true)
+  updatedAt       DateTime @updatedAt
+}
+
+model Hero {
+  id        Int      @id @default(1)
+  line1     String
+  line2     String
+  line3     String
+  roles     String
+  lead      String
+  cta1Label String
+  cta1Href  String
+  cta2Label String
+  cta2Href  String
+  codeFile  String
+  codeText  String
+  codeLang  String   @default("dart")
+  updatedAt DateTime @updatedAt
+}
+
+model About {
+  id         Int      @id @default(1)
+  tag        String
+  heading    String
+  paragraphs String
+  updatedAt  DateTime @updatedAt
+}
+
+model Fact {
+  id    String @id @default(cuid())
+  label String
+  value String
+  order Int
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String
+  features    String
+  tags        String
+  codeFile    String?
+  codeText    String?
+  codeLang    String?  @default("dart")
+  liveUrl     String?
+  coverUrl    String?
+  visible     Boolean  @default(true)
+  order       Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Tech {
+  id    String @id @default(cuid())
+  name  String
+  order Int
+}
+
+model ProcessStep {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  order       Int
+}
+
+model Stat {
+  id     String @id @default(cuid())
+  value  Int
+  suffix String @default("")
+  label  String
+  order  Int
+}
+
+model ContactInfo {
+  id          Int    @id @default(1)
+  email       String
+  heading     String
+  footerLeft  String
+  footerRight String
+}
+
+model SocialLink {
+  id      String  @id @default(cuid())
+  label   String
+  url     String
+  visible Boolean @default(true)
+  order   Int
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  body      String
+  read      Boolean  @default(false)
+  ip        String?
+  createdAt DateTime @default(now())
+}
